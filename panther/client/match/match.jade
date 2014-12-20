@@ -1,50 +1,77 @@
-template(name='matchView')
+template(name='matchScene')
     .match-container
 
         .match-options
 
             .players-container
-                button.player-button 1
-                button.player-button 2
-                button.player-button 3
-                button.player-button 4
-                button.player-button 5
-                button.player-button 6
-                button.player-button 7
-                button.player-button 8
-                button.player-button 9
-                button.player-button 10
-                button.player-button 11
-                button.player-button 12
+
+                each players
+                    button.player-button.choose-player #{number}
 
             .match-options-actions
-
-
 
         .match-actions
 
             .action-title
 
             .action-container
-                button.action-button.good Spike
-                button.action-button.none Spike
-                button.action-button.bad Spike
-                button.action-button.good Block
-                button.action-button.none Block
-                button.action-button.bad Block
-                button.action-button.good Service
-                button.action-button.none Service
-                button.action-button.bad Service
-                button.action-button.fine Set
-                button.action-button.none Set
-                button.action-button.bad Set
-                button.action-button.fine Receive
-                button.action-button.none Receive
-                button.action-button.bad Receive
-                button.action-button.fine Dig
-                button.action-button.none Dig
-                button.action-button.bad Dig
+
+                with currentPlayer
+
+                    button.action-button.good(name='spike')
+                        |#{stats.spike.good}
+                        |Spike
+                    button.action-button.none(name='spike')
+                        |#{stats.spike.none}
+                        |Spike
+                    button.action-button.bad(name='spike')
+                        |#{stats.spike.bad}
+                        |Spike
+                    button.action-button.good(name='block')
+                        |#{stats.block.good}
+                        |Block
+                    button.action-button.none(name='block')
+                        |#{stats.block.none}
+                        |Block
+                    button.action-button.bad(name='block')
+                        |#{stats.block.bad}
+                        |Block
+                    button.action-button.good(name='service')
+                        |#{stats.service.good}
+                        |Service
+                    button.action-button.none(name='service')
+                        |#{stats.service.none}
+                        |Service
+                    button.action-button.bad(name='service')
+                        |#{stats.service.bad}
+                        |Service
+                    button.action-button.good(name='set')
+                        |#{stats.set.good}
+                        |Set
+                    button.action-button.none(name='set')
+                        |#{stats.set.none}
+                        |Set
+                    button.action-button.bad(name='set')
+                        |#{stats.set.bad}
+                        |Set
+                    button.action-button.good(name='pass')
+                        |#{stats.pass.good}
+                        |Pass
+                    button.action-button.none(name='pass')
+                        |#{stats.pass.none}
+                        |Pass
+                    button.action-button.bad(name='pass')
+                        |#{stats.pass.bad}
+                        |Pass
+                    button.action-button.good(name='dig')
+                        |#{stats.dig.good}
+                        |Dig
+                    button.action-button.none(name='dig')
+                        |#{stats.dig.none}
+                        |Dig
+                    button.action-button.bad(name='dig')
+                        |#{stats.dig.bad}
+                        |Dig
 
         .match-totals
-
 
